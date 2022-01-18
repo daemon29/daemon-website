@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="amazon_aws-icon.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:export-filename="D:\daemon_website\art\amazon_aws-icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.8085938"
+     inkscape:cx="55.721836"
+     inkscape:cy="109.4854"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M 48.492182,97.224807 26.355795,89.28239 V 56.845682 l 22.136387,7.539091 z m 4.033259,0 22.136386,-7.942417 V 56.845682 L 52.525441,64.390979 Z M 28.636138,54.410214 50.974187,48.102817 71.748573,54.804231 50.974187,61.85623 Z M 22.145694,51.928209 0,43.960971 V 11.477724 l 22.136386,7.539092 z m 4.054976,0 22.136386,-7.942419 V 11.477724 L 26.194465,19.054045 Z M 2.3113676,9.1136139 24.649417,2.7751925 45.423802,9.4766072 24.649417,16.528606 Z M 73.830355,51.928209 51.693969,43.98579 V 11.477724 l 22.136386,7.539092 z m 4.033259,0 L 100,43.98579 V 11.477724 L 77.863614,19.016816 Z M 53.974311,9.1136139 76.31236,2.8062176 97.086746,9.5076323 76.31236,16.559631 Z"
+     fill="#ff9900"
+     fill-rule="evenodd"
+     id="path2"
+     style="stroke-width:3.10251" />
+</svg>

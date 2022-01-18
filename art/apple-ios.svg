@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="200"
+   viewBox="0.276 0.525 9.94608 9.9454431"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="apple-ios.svg"
+   inkscape:export-filename="D:\daemon_website\art\ios.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.5564288"
+     inkscape:cx="-12.321877"
+     inkscape:cy="121.06733"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 0.6236,2.8482416 c 0,0.10944 -0.06664,0.1904 -0.18096,0.1904 -0.0952,0 -0.16664,-0.08096 -0.16664,-0.1904 0,-0.1048 0.07616,-0.19048 0.17616,-0.19048 0.1048,0 0.17144,0.08568 0.17144,0.19048 z m -0.26352,5.7228 v -4.3776 h 0.17944 v 4.3776 z m 6.14776,-3.11904 c 0,2.20704 -1.2252,3.21032 -2.56632,3.21032 -1.37,0 -2.47944,-1.0852 -2.47944,-3.11904 0,-2.08832 1.14808,-3.21016 2.57592,-3.21016 1.39888,-1.6e-4 2.46984,1.10336 2.46984,3.11888 z m -4.86392,0.0456 c 0,1.67344 0.81104,2.97344 2.30608,2.97344 1.50544,0 2.36888,-1.34 2.36888,-2.99248 0,-1.5324 -0.69184,-2.93088 -2.27056,-2.93088 -1.57872,0 -2.4044,1.31672 -2.4044,2.94992 z m 5.52248,2.59912 c 0.30104,0.20064 0.82064,0.3944 1.26752,0.3944 0.84816,0 1.60248,-0.59336 1.60248,-1.46672 0,-0.81048 -0.50248,-1.23336 -1.3556,-1.59664 -0.76352,-0.32512 -1.45,-0.678 -1.45,-1.5444 0,-0.9028 0.71128,-1.54136 1.678,-1.54136 0.51984,0 0.912,0.14592 1.0944,0.2736 l -0.07248,0.15744 c -0.15504,-0.10936 -0.57408,-0.24872 -1.02992,-0.24872 -1.02168,0 -1.46672,0.772 -1.46672,1.34032 0,0.78496 0.60848,1.04744 1.3928,1.42136 0.91192,0.4468 1.3952,0.8408 1.3952,1.69816 0,0.92112 -0.65656,1.6688 -1.82392,1.6688 -0.48344,0 -1.03968,-0.16408 -1.31328,-0.37392 z"
+     id="path2"
+     style="stroke-width:0.08" />
+</svg>

@@ -1,6 +1,8 @@
 import 'package:daemon_website/models/project_tile_modal.dart';
+import 'package:daemon_website/providers/project_view_provider.dart';
 import 'package:daemon_website/widgets/project_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProjectList extends StatelessWidget {
   const ProjectList({Key? key}) : super(key: key);
@@ -12,6 +14,12 @@ class ProjectList extends StatelessWidget {
         spacing: 10,
         runSpacing: 10,
         children: [
+          TextButton(
+              onPressed: () {
+                Provider.of<ProjectViewProvider>(context, listen: false)
+                    .goForward();
+              },
+              child: Text("Go next")),
           ProjectTile(
             model: ProjectTileModal(
               'image',

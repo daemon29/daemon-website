@@ -1,5 +1,10 @@
+import 'package:daemon_website/constants.dart';
+import 'package:daemon_website/image_list.dart';
 import 'package:daemon_website/project_list.dart';
+import 'package:daemon_website/project_view.dart';
+import 'package:daemon_website/widgets/image_hero_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      scrollBehavior: const ConstantScrollBehavior(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: blueColor)
+            .copyWith(secondary: redColor),
       ),
       home: const MyHomePage(),
-      darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.dark,
     );
   }
 }
@@ -47,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         toolbarHeight: 40,
       ),
       body: Container(
+        alignment: Alignment.topCenter,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
@@ -58,22 +64,36 @@ class _MyHomePageState extends State<MyHomePage> {
           fit: BoxFit.cover,
         )),
         child: Row(
-          children: [
-            Flexible(
-              flex: 2,
-              fit: FlexFit.tight,
-              child: Material(
-                elevation: 5,
-                child: Text("Sonething"),
-              ),
-            ),
-            Flexible(
+          children: const [
+            Expanded(flex: 2, child: ImageList()),
+            Expanded(
               flex: 5,
-              child: ProjectList(),
+              child: ProjectView(),
             )
           ],
         ),
       ),
     );
   }
+}
+
+class ConstantScrollBehavior extends ScrollBehavior {
+  const ConstantScrollBehavior();
+
+  @override
+  Widget buildScrollbar(
+          BuildContext context, Widget child, ScrollableDetails details) =>
+      child;
+
+  @override
+  Widget buildOverscrollIndicator(
+          BuildContext context, Widget child, ScrollableDetails details) =>
+      child;
+
+  @override
+  TargetPlatform getPlatform(BuildContext context) => TargetPlatform.macOS;
+
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) =>
+      const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
 }

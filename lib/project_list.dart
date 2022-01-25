@@ -17,7 +17,7 @@ class ProjectList extends StatelessWidget {
               'https://i.imgur.com/IYFh9ge.png',
               'Patience Healthcare Navigator',
               'A set of tools and resources to help you navigate the US healthcare system and avoid surprise medical bills.',
-              'Jan 2021 - Jan 2021',
+              'Jan 2021 - Jan 2022',
               borderColor: const Color(0xff8e2686),
               tag: 'patience',
               flare: 'star',
@@ -41,6 +41,24 @@ class ProjectList extends StatelessWidget {
                 TechToolModal(
                   'gcp',
                   'This project uses Google Services',
+                ),
+              ],
+            ),
+          ),
+          ProjectTile(
+            model: ProjectTileModal(
+              'https://i.imgur.com/8dmUGkN.png',
+              "It's Here - a Unity game",
+              'The game aims to reflect the violence happening around us everyday. We want to share our perspective, illustrate the “violence”, and spread awareness.',
+              'Feb 2018 - March 2018',
+              // borderColor: const Color(0xff8e2686),
+              tag: 'itshere',
+              flare: 'prize',
+              borderColor: Colors.black,
+              techTools: [
+                TechToolModal(
+                  'unity',
+                  'This project is created with Unity 3D',
                 ),
               ],
             ),

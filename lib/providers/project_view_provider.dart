@@ -1,4 +1,5 @@
 import 'package:daemon_website/project_list.dart';
+import 'package:daemon_website/project_screen/itshere_screen.dart';
 import 'package:daemon_website/project_screen/patience_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,9 @@ class ProjectViewProvider extends ChangeNotifier {
       switch (route) {
         case 'patience':
           pages[1] = const PatienceScreen();
+          break;
+        case 'itshere':
+          pages[1] = const ItsHerescreen();
           break;
         default:
       }

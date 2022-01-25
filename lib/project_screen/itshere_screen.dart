@@ -1,13 +1,13 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/providers/project_view_provider.dart';
-import 'package:daemon_website/text_spans/patience_text.dart';
+import 'package:daemon_website/text_spans/itshere_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:span_builder/span_builder.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class PatienceScreen extends StatelessWidget {
-  const PatienceScreen({Key? key}) : super(key: key);
+class ItsHerescreen extends StatelessWidget {
+  const ItsHerescreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class PatienceScreen extends StatelessWidget {
                   expandedHeight: 300.0,
                   flexibleSpace: FlexibleSpaceBar(
                     background: Image.network(
-                      images[0],
+                      images[9],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -34,14 +34,14 @@ class PatienceScreen extends StatelessWidget {
                         Container(
                           margin: titlePadding,
                           child: Text(
-                            "Patience Healthcare Navigator",
+                            "It's Here",
                             style: title,
                           ),
                         ),
                         Container(
                           margin: subtitlePadding,
                           child: Text(
-                            "A set of tools and resources to help you navigate the US healthcare system and avoid surprise medical bills. The app can be found on Google Playstore and App Store. This project is submitted to Google Solution Challenge, and achieves the top 50 across the globe.",
+                            "The game aims to reflect the violence happening around us everyday. We want to share our perspective, illustrate the “violence”, and spread awareness.",
                             style: subtitle,
                           ),
                         ),
@@ -49,31 +49,34 @@ class PatienceScreen extends StatelessWidget {
                           margin: bodyTextPadding,
                           child: SpanBuilderWidget(
                             defaultStyle: body_1,
-                            text: patienceAuthor,
+                            text: itshereAuthor,
                           ),
-                        ),
-                        SpanBuilderWidget(
-                          defaultStyle: body_1,
-                          text: patienceColab,
                         ),
                         Container(
                           margin: header2Padding,
                           child: Text(
-                            "What is this project about?",
+                            """“Violence” theme""",
                             style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            "The goal of Patience Healthcare Navigator is to empower the average American with knowledge and tools to help them navigate the confusing and expensive healthcare system in the US, Our app provides education about insurance system, how to avoid out-of-network/surprise medical bills, what to do if you receive a surprise bill, and more. ",
+                            "It’s here is inspired by a global issue that happens every day in the world - problems of violence. School violence, domestic violence, and child violence, ... all of these phrases seem to be only seen in newspapers as if it were a distant affair, but it's not. Maybe your classmate who is sitting at your table is being abused by his parents, maybe your sibling is being bullied at school and maybe the neighbor has had to undergo oppression from the people around him. Violence is much more than the physical aspect, it can also be cruel things to say, behaviors that make people mentally hurt.",
                             style: body_1,
+                          ),
+                        ),
+                        Container(
+                          margin: header2Padding,
+                          child: Text(
+                            "The name 'It's Here'",
+                            style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            "You can take a view our demo video, created by an awesome partner",
+                            "'It's here'- It's already here, it's here and it's happening. It is time for us to face reality and solve it. We have to find the victims to help them, give them a safe environment to speak up and protect each other, and overcome the difficulties together.",
                             style: body_1,
                           ),
                         ),
@@ -81,74 +84,63 @@ class PatienceScreen extends StatelessWidget {
                           scale: 0.8,
                           child: YoutubePlayerIFrame(
                             controller: YoutubePlayerController(
-                              initialVideoId: '1a0VJx-mTbk',
+                              initialVideoId: 'W3nwTy5EJNc',
                             ),
                           ),
                         ),
                         Container(
                           margin: header2Padding,
                           child: Text(
-                            "Tech specs",
+                            "Rules of the Game",
                             style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            """This app is created with: Flutter (an adaptive solution, allow you to create apps across platform) \nFirebase for Analytics (this help use analyze user's experience) \nGoogle Cloud Services such as Google Places API, Cloud Functions and Big Query Database. They help us host the database, APIs and power some of the tools.""",
+                            "This game requires 2 people on 2 different devices to play.\nYou will enter a dark maze as a bright blue orb, and the other player will enter the other side of the maze as a pink orb.\nThe directive is 2 players must reach the light gate, located in the center of the maze. But here is the catch, the gate will not open until 2 players find each other in the map. \nOnce you have found your friend, the light gate will open, exploding shinning particles up to the sky.\nYou both need to get there and enter the gate. Then you win.",
                             style: body_1,
                           ),
                         ),
+                        Image.network(images[11]),
                         Container(
                           margin: header2Padding,
                           child: Text(
-                            "My role and responsibilities",
+                            "The Enemies",
                             style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            """I am the team leader, and Flutter Developer of this project. My responsibility spans across the project, from front to backend, design and research.\nI work closely with our test users and experts in the healthcare field.\nWe conduct various unit and integration tests, and release internal tests on the Play Store.\nDesign metrics to evaluate features in the app, measure and analyze with Firebase Analytics.""",
+                            "Inside this dark maze, there are many dark red orbs you must avoid. These dark red orbs will chase you if you are nearby, and will insult you ruthlessly.\nIf the orb touches you, you will be knocked out, and your light source will fade away (you lose health).\nIf you lose all health, the pure light blue/pink will completely disappear and you will become dark red, just like the enemy. You and your friend will lose at this point.\nThe dark red orb is slower than you, but there are many of them.",
                             style: body_1,
                           ),
                         ),
+                        Image.network(images[10]),
                         Container(
                           margin: header2Padding,
                           child: Text(
-                            "Google Solution Challenge",
+                            "The novelty",
                             style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            "We submitted this project to Google Solution Challenge. It is a global event, hosted by Google, that addresses the 17 UN goals, and covers many topics such as Health, Clean Water, Life, etc.",
+                            "The dark maze represents the journey to escape violence. Dark and scary.\nThe color of the player is neither light blue nor pink, representing innocence, pureness, purity, like a baby.\nThe dark red orb represents the people inflicting violence in this world, where they will hurt you verbally, and physically. Everytime they touch you, your pure light fades away. The result is your pure light completely fade away (represent a soul die, give up, commit suicide, etc), or your light become dark red (you become what hurt you, you become violence, just as many children grow up and become abusive as the result of domestic violence, etc).\n2 players must find each other in order to open the gate. This is the message we want to share to the player. It is hard to overcome violence, but you are not alone. Love and protect people around you. Be there for them!",
                             style: body_1,
-                          ),
-                        ),
-                        Image.network(images[1]),
-                        Container(
-                          margin: bodyTextPadding,
-                          child: Text(
-                            "Our project was nominated as in the top 50. Enrolling in this challenge gave us a lot of opportunity to grow, as coding and making the product is just a part of the work, how to deliver it to the customers and make it successful in reality. We have the chance to work with experts at Google, as they gave us lots of advice in our decision making and future of the project.",
-                            style: body_1,
-                          ),
-                        ),
-                        Container(
-                          margin: header2Padding,
-                          child: Text(
-                            "Our knowledge is legit",
-                            style: header_2,
                           ),
                         ),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(
-                            "All the knowledge and information in our app are the result of intensive research. We also have the app consulted with the experts in the field, who deal with patients, medical bills and health insurance everyday. We constantly update the knowledge in our app, to make sure it is up-to-date, trustworthy and reliable. ",
+                            "The game is created with Unity, during the Game UIT hackathon. We won 2 prizes with this game: Mentor Choice and Consolation.",
                             style: body_1,
                           ),
                         ),
+                        Image.network(images[13]),
+                        Image.network(images[12]),
                         const SizedBox(
                           height: 100,
                         )

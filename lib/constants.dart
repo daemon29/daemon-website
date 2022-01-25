@@ -21,16 +21,16 @@ TextStyle header_1 =
 TextStyle header_2 =
     GoogleFonts.tinos(fontSize: 22, fontWeight: FontWeight.bold);
 TextStyle body_1 = GoogleFonts.tinos(
-  fontSize: 18,
+  fontSize: 16,
 );
 TextStyle bodyBold_1 =
-    GoogleFonts.tinos(fontSize: 18, fontWeight: FontWeight.bold);
-TextStyle hyperLink = GoogleFonts.tinos(fontSize: 18, color: Colors.blueAccent);
+    GoogleFonts.tinos(fontSize: 16, fontWeight: FontWeight.bold);
+TextStyle hyperLink = GoogleFonts.tinos(fontSize: 16, color: Colors.blueAccent);
 
-EdgeInsets titlePadding = const EdgeInsets.only(top: 20);
-EdgeInsets subtitlePadding = const EdgeInsets.only(top: 5);
+EdgeInsets titlePadding = const EdgeInsets.only(top: 20, bottom: 5);
+EdgeInsets subtitlePadding = const EdgeInsets.only(bottom: 5);
 EdgeInsets header1Padding = const EdgeInsets.only(top: 5);
-EdgeInsets header2Padding = const EdgeInsets.only(bottom: 5);
+EdgeInsets header2Padding = const EdgeInsets.only(bottom: 5, top: 10);
 EdgeInsets bodyTextPadding = const EdgeInsets.only(top: 10, bottom: 10);
 
 Map<int, Color> redColorCode = {

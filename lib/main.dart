@@ -1,10 +1,7 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/image_list.dart';
-import 'package:daemon_website/project_list.dart';
 import 'package:daemon_website/project_view.dart';
-import 'package:daemon_website/widgets/image_hero_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Daemon Nguyen',
       scrollBehavior: const ConstantScrollBehavior(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: blueColor)

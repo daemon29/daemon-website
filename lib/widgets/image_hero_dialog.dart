@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class HeroDialogRoute<T> extends PageRoute<T> {
   HeroDialogRoute({required this.builder}) : super();
   final WidgetBuilder builder;
+
   @override
   bool get opaque => false;
 
@@ -19,22 +20,23 @@ class HeroDialogRoute<T> extends PageRoute<T> {
   Color get barrierColor => Colors.black54;
 
   @override
-  // TODO: implement barrierLabel
-  String? get barrierLabel => null;
+  String? get barrierLabel => "Pop!";
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation, Widget child) {
     return FadeTransition(
       opacity: CurvedAnimation(curve: Curves.easeOut, parent: animation),
-      child: child,
+      child: GestureDetector(
+        child: child,
+        onTap: () => Navigator.pop(context),
+      ),
     );
   }
 
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation) {
-    // TODO: implement buildPage
     return builder(context);
   }
 }

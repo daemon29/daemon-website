@@ -1,8 +1,10 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/models/project_tile_modal.dart';
+import 'package:daemon_website/providers/project_view_provider.dart';
 import 'package:daemon_website/widgets/tech_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ProjectTile extends StatefulWidget {
   final ProjectTileModal model;
@@ -34,7 +36,8 @@ class _ProjectTileState extends State<ProjectTile>
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () => Provider.of<ProjectViewProvider>(context, listen: false)
+              .goForward(widget.model.tag),
           child: MouseRegion(
             onEnter: (e) {
               _controller.forward();
@@ -61,8 +64,8 @@ class _ProjectTileState extends State<ProjectTile>
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/background.png',
+                        Image.network(
+                          widget.model.image,
                           height: 160,
                           width: 400,
                           fit: BoxFit.cover,
@@ -93,7 +96,8 @@ class _ProjectTileState extends State<ProjectTile>
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 10, bottom: 5),
+                            padding:
+                                const EdgeInsets.only(right: 10, bottom: 5),
                             child: Text(
                               widget.model.startEndDate,
                               style: GoogleFonts.openSans(
@@ -110,11 +114,11 @@ class _ProjectTileState extends State<ProjectTile>
                     : Positioned(
                         child: Image.asset(
                           'assets/${widget.model.flare}.png',
-                          height: 50,
+                          height: 60,
                           width: 50,
                         ),
                         top: 10,
-                        left: 5,
+                        left: 10,
                       ),
               ],
             ),

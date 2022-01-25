@@ -8,9 +8,9 @@ class ProjectViewProvider extends ChangeNotifier {
   String? route;
   late List<Widget> pages;
   late PageController pageController;
-
+  String? _currentRoute;
   ProjectViewProvider() {
-    pages = const [ProjectList(), PatienceScreen()];
+    pages = [ProjectList(), SizedBox.shrink()];
     pageController = PageController(initialPage: 0);
   }
   void updateProjectViewPage(Widget newWidget) {
@@ -18,7 +18,16 @@ class ProjectViewProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void goForward() {
+  void goForward(String route) {
+    if (route != _currentRoute) {
+      switch (route) {
+        case 'patience':
+          pages[1] = const PatienceScreen();
+          break;
+        default:
+      }
+    }
+    notifyListeners();
     pageController.animateToPage(1,
         duration: const Duration(milliseconds: 800), curve: Curves.ease);
   }

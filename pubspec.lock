@@ -266,6 +266,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+  span_builder:
+    dependency: "direct main"
+    description:
+      path: "packages/span_builder"
+      ref: master
+      resolved-ref: "4fca91589816cff29546cf8db7306f7c9dc2f7f6"
+      url: "https://github.com/eyeem/span_builder.git"
+    source: git
+    version: "0.2.0"
   stack_trace:
     dependency: transitive
     description:
@@ -309,7 +318,7 @@ packages:
     source: hosted
     version: "1.3.0"
   url_launcher:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: url_launcher
       url: "https://pub.dartlang.org"
@@ -335,14 +344,14 @@ packages:
       name: url_launcher_linux
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   url_launcher_macos:
     dependency: transitive
     description:
       name: url_launcher_macos
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   url_launcher_platform_interface:
     dependency: transitive
     description:
@@ -377,7 +386,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.3"
+    version: "2.3.8"
   xdg_directories:
     dependency: transitive
     description:

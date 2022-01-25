@@ -14,11 +14,13 @@ class ProjectList extends StatelessWidget {
         children: [
           ProjectTile(
             model: ProjectTileModal(
-              'image',
+              'https://i.imgur.com/IYFh9ge.png',
               'Patience Healthcare Navigator',
-              'An app that do something useful',
-              'Jan 2021 - Current',
-              borderColor: Colors.redAccent,
+              'A set of tools and resources to help you navigate the US healthcare system and avoid surprise medical bills.',
+              'Jan 2021 - Jan 2021',
+              borderColor: const Color(0xff8e2686),
+              tag: 'patience',
+              flare: 'star',
               techTools: [
                 TechToolModal(
                   'firebase',

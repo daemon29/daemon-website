@@ -1,8 +1,10 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/models/project_tile_modal.dart';
+import 'package:daemon_website/providers/project_view_provider.dart';
 import 'package:daemon_website/widgets/tech_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ProjectTile extends StatefulWidget {
   final ProjectTileModal model;
@@ -34,7 +36,8 @@ class _ProjectTileState extends State<ProjectTile>
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () => Provider.of<ProjectViewProvider>(context, listen: false)
+              .goForward(widget.model.tag),
           child: MouseRegion(
             onEnter: (e) {
               _controller.forward();
@@ -55,37 +58,37 @@ class _ProjectTileState extends State<ProjectTile>
                           color: widget.model.borderColor, width: 1.5),
                       borderRadius: borderRound_1,
                     ),
-                    width: 200,
+                    width: 400,
                     // height: 150,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/background.png',
-                          height: 80,
-                          width: 200,
+                        Image.network(
+                          widget.model.image,
+                          height: 160,
+                          width: 400,
                           fit: BoxFit.cover,
                         ),
                         Padding(
-                            padding: const EdgeInsets.fromLTRB(8, 3, 8, 0),
+                            padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
                             child: ConstrainedBox(
-                              constraints: const BoxConstraints(maxHeight: 16),
+                              constraints: const BoxConstraints(maxHeight: 70),
                               child: Text(
                                 // max character: 32
                                 widget.model.projectName,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 10, fontWeight: FontWeight.w500),
+                                    fontSize: 20, fontWeight: FontWeight.w500),
                               ),
                             )),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 5, 8, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
                           child: SizeTransition(
                             sizeFactor: _animation,
                             child: Text(
                               widget.model.description,
                               style: GoogleFonts.roboto(
-                                fontSize: 8,
+                                fontSize: 11,
                               ),
                             ),
                           ),
@@ -93,11 +96,12 @@ class _ProjectTileState extends State<ProjectTile>
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 8, bottom: 5),
+                            padding:
+                                const EdgeInsets.only(right: 10, bottom: 5),
                             child: Text(
                               widget.model.startEndDate,
                               style: GoogleFonts.openSans(
-                                  fontSize: 6, fontWeight: FontWeight.bold),
+                                  fontSize: 10, fontWeight: FontWeight.bold),
                             ),
                           ),
                         )
@@ -110,18 +114,18 @@ class _ProjectTileState extends State<ProjectTile>
                     : Positioned(
                         child: Image.asset(
                           'assets/${widget.model.flare}.png',
-                          height: 24,
-                          width: 24,
+                          height: 60,
+                          width: 50,
                         ),
                         top: 10,
-                        left: 8,
+                        left: 10,
                       ),
               ],
             ),
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 10,
         ),
         Wrap(
             spacing: 5,

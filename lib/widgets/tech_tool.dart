@@ -11,9 +11,9 @@ class TechTool extends StatelessWidget {
       message: tooltip,
       child: ClipOval(
         child: Container(
-          padding: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(10),
           color: Colors.white,
-          height: 24,
+          height: 50,
           child: Image.asset('assets/$asset.png'),
         ),
       ),

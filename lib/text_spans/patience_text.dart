@@ -1,6 +1,5 @@
 import 'package:daemon_website/constants.dart';
-import 'package:daemon_website/providers/project_view_provider.dart';
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:span_builder/span_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,4 +26,21 @@ final patienceColab = SpanBuilder(
   launch("https://www.linkedin.com/in/rohan-kadkol/");
 }).apply(TextSpan(text: "Greg Brosman", style: hyperLink), onTap: () {
   launch("https://www.linkedin.com/in/greg-brosman-532b0823/");
+});
+final patienceLinkAndroid =
+    SpanBuilder("Google Playstore for Android: Follow this link")
+        .apply(const TextSpan(
+            text: "Google Playstore for Android:",
+            style: TextStyle(fontWeight: FontWeight.bold)))
+        .apply(TextSpan(text: "Follow this link", style: hyperLink), onTap: () {
+  launch(
+      "https://play.google.com/store/apps/details?id=com.patienceteam.healthcarenavigator");
+});
+final patienceLinkiOS = SpanBuilder("Apple App Store for iOS: Follow this link")
+    .apply(const TextSpan(
+        text: "Apple App Store for iOS:",
+        style: TextStyle(fontWeight: FontWeight.bold)))
+    .apply(TextSpan(text: "Follow this link", style: hyperLink), onTap: () {
+  launch(
+      "https://apps.apple.com/us/app/patience-healthcare-navigator/id1593948581");
 });

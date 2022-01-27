@@ -3,14 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 TextStyle titleText_1 =
     GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500);
-TextStyle bodyText_1 = GoogleFonts.roboto(fontSize: 12);
+TextStyle bodyText_1 = GoogleFonts.roboto(
+  fontSize: 12,
+);
 
 EdgeInsets padding_1 = const EdgeInsets.all(10);
 
 BorderRadiusGeometry borderRound_1 =
     const BorderRadius.all(Radius.circular(15));
-TextStyle title = GoogleFonts.openSans(
-    fontSize: 48, fontWeight: FontWeight.bold, letterSpacing: -0.011);
+TextStyle title =
+    GoogleFonts.openSans(fontSize: 48, fontWeight: FontWeight.bold);
 TextStyle subtitle = GoogleFonts.openSans(
     fontStyle: FontStyle.italic,
     fontSize: 21,
@@ -20,13 +22,12 @@ TextStyle header_1 =
     GoogleFonts.openSans(fontSize: 30, fontWeight: FontWeight.bold);
 TextStyle header_2 =
     GoogleFonts.openSans(fontSize: 22, fontWeight: FontWeight.bold);
-TextStyle body_1 = GoogleFonts.openSans(
-  fontSize: 16,
-);
+TextStyle body_1 =
+    GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.w500);
 TextStyle bodyBold_1 =
     GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.bold);
-TextStyle hyperLink =
-    GoogleFonts.openSans(fontSize: 16, color: Colors.blueAccent);
+TextStyle hyperLink = GoogleFonts.openSans(
+    fontSize: 16, color: Colors.blueAccent, fontWeight: FontWeight.w500);
 
 EdgeInsets titlePadding = const EdgeInsets.only(top: 20, bottom: 5);
 EdgeInsets subtitlePadding = const EdgeInsets.only(bottom: 5);
@@ -62,7 +63,8 @@ MaterialColor redColor = MaterialColor(0xffe63552, redColorCode);
 MaterialColor blueColor = MaterialColor(0xff2060d6, blueColorCode);
 
 List<String> images = const [
-  "https://i.imgur.com/IYFh9ge.png", //patience
+  "https://i.imgur.com/IYFh9ge.png", //patience_1
+  "https://i.imgur.com/b1ig2sP.png", //patience_2
   "https://i.imgur.com/eXerQn9.png", //google certificate
   "https://i.imgur.com/c8Cv08K.png", //ladybug certificate
   "https://i.imgur.com/sIkuLqu.jpg", //dotosave_1

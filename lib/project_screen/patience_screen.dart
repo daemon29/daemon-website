@@ -57,6 +57,17 @@ class PatienceScreen extends StatelessWidget {
                           text: patienceColab,
                         ),
                         Container(
+                          margin: bodyTextPadding,
+                          child: SpanBuilderWidget(
+                            defaultStyle: body_1,
+                            text: patienceLinkAndroid,
+                          ),
+                        ),
+                        SpanBuilderWidget(
+                          defaultStyle: body_1,
+                          text: patienceLinkiOS,
+                        ),
+                        Container(
                           margin: header2Padding,
                           child: Text(
                             "What is this project about?",
@@ -99,6 +110,7 @@ class PatienceScreen extends StatelessWidget {
                             style: body_1,
                           ),
                         ),
+                        Image.network(images[1]),
                         Container(
                           margin: header2Padding,
                           child: Text(
@@ -127,7 +139,7 @@ class PatienceScreen extends StatelessWidget {
                             style: body_1,
                           ),
                         ),
-                        Image.network(images[1]),
+                        Image.network(images[2]),
                         Container(
                           margin: bodyTextPadding,
                           child: Text(

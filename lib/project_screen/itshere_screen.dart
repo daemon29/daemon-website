@@ -21,7 +21,7 @@ class ItsHerescreen extends StatelessWidget {
                   expandedHeight: 300.0,
                   flexibleSpace: FlexibleSpaceBar(
                     background: Image.network(
-                      images[9],
+                      images[10],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -102,7 +102,7 @@ class ItsHerescreen extends StatelessWidget {
                             style: body_1,
                           ),
                         ),
-                        Image.network(images[11]),
+                        Image.network(images[12]),
                         Container(
                           margin: header2Padding,
                           child: Text(
@@ -117,7 +117,7 @@ class ItsHerescreen extends StatelessWidget {
                             style: body_1,
                           ),
                         ),
-                        Image.network(images[10]),
+                        Image.network(images[11]),
                         Container(
                           margin: header2Padding,
                           child: Text(
@@ -139,8 +139,8 @@ class ItsHerescreen extends StatelessWidget {
                             style: body_1,
                           ),
                         ),
+                        Image.network(images[14]),
                         Image.network(images[13]),
-                        Image.network(images[12]),
                         const SizedBox(
                           height: 100,
                         )

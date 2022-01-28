@@ -3,9 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 TextStyle titleText_1 =
     GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500);
-TextStyle bodyText_1 = GoogleFonts.roboto(
-  fontSize: 12,
-);
+TextStyle bodyText_1 =
+    GoogleFonts.roboto(fontSize: 12, fontWeight: FontWeight.w600);
 
 EdgeInsets padding_1 = const EdgeInsets.all(10);
 
@@ -17,7 +16,7 @@ TextStyle subtitle = GoogleFonts.openSans(
     fontStyle: FontStyle.italic,
     fontSize: 21,
     color: Colors.grey,
-    fontWeight: FontWeight.w400);
+    fontWeight: FontWeight.w600);
 TextStyle header_1 =
     GoogleFonts.openSans(fontSize: 30, fontWeight: FontWeight.bold);
 TextStyle header_2 =
@@ -81,4 +80,9 @@ List<String> images = const [
   "https://i.imgur.com/A2OrgbR.jpg", //its here
   "https://i.imgur.com/0s0vdER.png", //certificate
   "https://i.imgur.com/GzfjiPe.jpg", //graduation
+];
+
+List<String> unsortedImages = const [
+  "https://i.imgur.com/yZl84gc.png", //chem 2
+  "https://i.imgur.com/2xilfWe.png", //chem 3
 ];

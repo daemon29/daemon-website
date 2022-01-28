@@ -52,6 +52,10 @@ class ItsHerescreen extends StatelessWidget {
                             text: itshereAuthor,
                           ),
                         ),
+                        SpanBuilderWidget(
+                          defaultStyle: body_1,
+                          text: itshereLink,
+                        ),
                         Container(
                           margin: header2Padding,
                           child: Text(

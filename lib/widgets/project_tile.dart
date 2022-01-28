@@ -54,8 +54,8 @@ class _ProjectTileState extends State<ProjectTile>
                   child: Container(
                     clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
-                      border: Border.all(
-                          color: widget.model.borderColor, width: 1.5),
+                      border:
+                          Border.all(color: widget.model.borderColor, width: 2),
                       borderRadius: borderRound_1,
                     ),
                     width: 400,
@@ -78,7 +78,7 @@ class _ProjectTileState extends State<ProjectTile>
                                 // max character: 32
                                 widget.model.projectName,
                                 style: GoogleFonts.roboto(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
+                                    fontSize: 20, fontWeight: FontWeight.bold),
                               ),
                             )),
                         Padding(
@@ -88,8 +88,7 @@ class _ProjectTileState extends State<ProjectTile>
                             child: Text(
                               widget.model.description,
                               style: GoogleFonts.roboto(
-                                fontSize: 11,
-                              ),
+                                  fontSize: 11, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),

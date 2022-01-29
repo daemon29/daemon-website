@@ -62,7 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
         )),
         child: Row(
           children: const [
-            Expanded(flex: 2, child: ImageList()),
+            Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: ImageList(),
+                )),
             Expanded(
               flex: 5,
               child: ProjectView(),

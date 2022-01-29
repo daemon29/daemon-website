@@ -31,8 +31,8 @@ TextStyle hyperLink = GoogleFonts.openSans(
 EdgeInsets titlePadding = const EdgeInsets.only(top: 20, bottom: 5);
 EdgeInsets subtitlePadding = const EdgeInsets.only(bottom: 5);
 EdgeInsets header1Padding = const EdgeInsets.only(top: 5);
-EdgeInsets header2Padding = const EdgeInsets.only(bottom: 5, top: 10);
-EdgeInsets bodyTextPadding = const EdgeInsets.only(top: 10, bottom: 10);
+EdgeInsets header2Padding = const EdgeInsets.only(top: 10);
+EdgeInsets bodyTextPadding = const EdgeInsets.only(bottom: 5);
 
 Map<int, Color> redColorCode = {
   50: const Color.fromRGBO(230, 53, 82, .1),

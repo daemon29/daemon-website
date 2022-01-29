@@ -9,13 +9,15 @@ class TechTool extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message: tooltip,
-      child: ClipOval(
-        child: Container(
-          padding: const EdgeInsets.all(10),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
           color: Colors.white,
-          height: 50,
-          child: Image.asset('assets/$asset.png'),
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.grey),
         ),
+        height: 50,
+        child: Image.asset('assets/$asset.png'),
       ),
     );
   }

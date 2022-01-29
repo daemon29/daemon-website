@@ -52,7 +52,7 @@ class _ProjectTileState extends State<ProjectTile>
                   elevation: 5,
                   borderRadius: borderRound_1,
                   child: Container(
-                    clipBehavior: Clip.hardEdge,
+                    clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       border:
                           Border.all(color: widget.model.borderColor, width: 2),

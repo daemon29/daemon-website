@@ -1,4 +1,5 @@
 import 'package:daemon_website/project_list.dart';
+import 'package:daemon_website/project_screen/chemtracker_screen.dart';
 import 'package:daemon_website/project_screen/itshere_screen.dart';
 import 'package:daemon_website/project_screen/patience_screen.dart';
 import 'package:flutter/foundation.dart';
@@ -27,6 +28,9 @@ class ProjectViewProvider extends ChangeNotifier {
           break;
         case 'itshere':
           pages[1] = const ItsHerescreen();
+          break;
+        case 'chemtracker':
+          pages[1] = const ChemTrackerScreen();
           break;
         default:
       }

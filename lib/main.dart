@@ -42,7 +42,7 @@ class DaemonWebsite extends StatelessWidget {
         button: Image.asset('assets/vietnam-dash.png'),
         children: [
           ActionButton(
-            iconSize: 30,
+            iconSize: 40,
             onPressed: () =>
                 launch("https://www.linkedin.com/in/tuan-nguyen-0129/"),
             tooltip: 'Connect me on LinkedIn',
@@ -52,7 +52,7 @@ class DaemonWebsite extends StatelessWidget {
             ),
           ),
           ActionButton(
-            iconSize: 30,
+            iconSize: 40,
             onPressed: () => launch("https://github.com/daemon29"),
             tooltip: 'Check out my awesome repos',
             icon: const FaIcon(
@@ -60,7 +60,7 @@ class DaemonWebsite extends StatelessWidget {
             ),
           ),
           ActionButton(
-            iconSize: 30,
+            iconSize: 40,
             onPressed: () {},
             tooltip: 'Follow me on Twitter',
             icon: const FaIcon(
@@ -69,7 +69,7 @@ class DaemonWebsite extends StatelessWidget {
             ),
           ),
           ActionButton(
-            iconSize: 30,
+            iconSize: 40,
             onPressed: () => launch("mailto:nguyen.daemon@gmail.com"),
             tooltip: 'Contact me via email',
             icon: const FaIcon(

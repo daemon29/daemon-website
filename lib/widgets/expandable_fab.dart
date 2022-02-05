@@ -117,6 +117,8 @@ class _ExpandableFabState extends State<ExpandableFab>
 
   Widget _buildTapToOpenFab() {
     return AnimatedContainer(
+      width: 80,
+      height: 80,
       transformAlignment: Alignment.center,
       transform: Matrix4.diagonal3Values(
         _open ? 0.8 : 1.0,

@@ -7,15 +7,18 @@ class ProjectList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Wrap(
-        spacing: 10,
-        runSpacing: 10,
-        children: [
-          ProjectTile(model: patienceModel),
-          ProjectTile(model: itshereModel),
-          ProjectTile(model: chemtrackerModel),
-        ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: SingleChildScrollView(
+        child: Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: [
+            ProjectTile(model: patienceModel),
+            ProjectTile(model: itshereModel),
+            ProjectTile(model: chemtrackerModel),
+          ],
+        ),
       ),
     );
   }

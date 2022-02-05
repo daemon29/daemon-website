@@ -1,7 +1,10 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/image_list.dart';
 import 'package:daemon_website/project_view.dart';
+import 'package:daemon_website/widgets/expandable_fab.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,33 +23,61 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: blueColor)
             .copyWith(secondary: redColor),
       ),
-      home: const MyHomePage(),
+      home: const DaemonWebsite(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class DaemonWebsite extends StatelessWidget {
+  const DaemonWebsite({Key? key}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 40,
+      ),
+      floatingActionButton: ExpandableFab(
+        distance: 150,
+        button: Image.asset('assets/vietnam-dash.png'),
+        children: [
+          ActionButton(
+            iconSize: 30,
+            onPressed: () =>
+                launch("https://www.linkedin.com/in/tuan-nguyen-0129/"),
+            tooltip: 'Connect me on LinkedIn',
+            icon: FaIcon(
+              FontAwesomeIcons.linkedin,
+              color: blueColor,
+            ),
+          ),
+          ActionButton(
+            iconSize: 30,
+            onPressed: () => launch("https://github.com/daemon29"),
+            tooltip: 'Check out my awesome repos',
+            icon: const FaIcon(
+              FontAwesomeIcons.github,
+            ),
+          ),
+          ActionButton(
+            iconSize: 30,
+            onPressed: () {},
+            tooltip: 'Follow me on Twitter',
+            icon: const FaIcon(
+              FontAwesomeIcons.twitter,
+              color: Color(0xff1DA1F2),
+            ),
+          ),
+          ActionButton(
+            iconSize: 30,
+            onPressed: () => launch("mailto:nguyen.daemon@gmail.com"),
+            tooltip: 'Contact me via email',
+            icon: const FaIcon(
+              FontAwesomeIcons.google,
+              color: Colors.red,
+            ),
+          ),
+        ],
       ),
       body: Container(
         alignment: Alignment.topCenter,

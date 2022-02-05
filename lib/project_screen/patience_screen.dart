@@ -1,6 +1,7 @@
 import 'package:daemon_website/constants.dart';
 import 'package:daemon_website/providers/project_view_provider.dart';
 import 'package:daemon_website/text_spans/patience_text.dart';
+import 'package:daemon_website/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:span_builder/span_builder.dart';
@@ -171,14 +172,7 @@ class PatienceScreen extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-              child: IconButton(
-                  iconSize: 30,
-                  color: redColor,
-                  onPressed: () =>
-                      Provider.of<ProjectViewProvider>(context, listen: false)
-                          .goBack(),
-                  icon: const Icon(Icons.chevron_left)))
+          const Positioned(top: 5, left: 5, child: CustomBackButton()),
         ],
       ),
     );

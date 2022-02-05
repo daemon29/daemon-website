@@ -22,7 +22,7 @@ TextStyle header_1 =
 TextStyle header_2 =
     GoogleFonts.openSans(fontSize: 22, fontWeight: FontWeight.bold);
 TextStyle body_1 =
-    GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.w500);
+    GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.w600);
 TextStyle bodyBold_1 =
     GoogleFonts.openSans(fontSize: 16, fontWeight: FontWeight.bold);
 TextStyle hyperLink = GoogleFonts.openSans(

@@ -37,12 +37,12 @@ class ProjectViewProvider extends ChangeNotifier {
     }
     notifyListeners();
     pageController.animateToPage(1,
-        duration: const Duration(milliseconds: 800), curve: Curves.ease);
+        duration: const Duration(milliseconds: 600), curve: Curves.ease);
   }
 
   void goBack() {
     pageController.animateToPage(0,
-        duration: const Duration(milliseconds: 800), curve: Curves.ease);
+        duration: const Duration(milliseconds: 600), curve: Curves.ease);
   }
 }
 

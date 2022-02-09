@@ -4,6 +4,7 @@ import 'package:daemon_website/project_screen/itshere_screen.dart';
 import 'package:daemon_website/project_screen/patience_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:nil/nil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectViewProvider extends ChangeNotifier {
@@ -12,7 +13,7 @@ class ProjectViewProvider extends ChangeNotifier {
   late PageController pageController;
   String? _currentRoute;
   ProjectViewProvider() {
-    pages = [ProjectList(), SizedBox.shrink()];
+    pages = [const ProjectList(), nil];
     pageController = PageController(initialPage: 0);
   }
   void updateProjectViewPage(Widget newWidget) {

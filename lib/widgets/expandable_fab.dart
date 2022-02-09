@@ -62,6 +62,13 @@ class _ExpandableFabState extends State<ExpandableFab>
     });
   }
 
+  void _openFab() {
+    setState(() {
+      _open = true;
+      _controller.forward();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox.expand(
@@ -117,26 +124,31 @@ class _ExpandableFabState extends State<ExpandableFab>
 
   Widget _buildTapToOpenFab() {
     return AnimatedContainer(
-      width: 80,
-      height: 80,
-      transformAlignment: Alignment.center,
-      transform: Matrix4.diagonal3Values(
-        _open ? 0.8 : 1.0,
-        _open ? 0.8 : 1.0,
-        1.0,
-      ),
-      duration: const Duration(milliseconds: 250),
-      curve: const Interval(0.0, 0.5, curve: Curves.easeOut),
-      child: FloatingActionButton(
-        backgroundColor: widget.backgroundColor,
-        foregroundColor: widget.foregroundColor,
-        onPressed: _toggle,
-        child: Padding(
-          padding: const EdgeInsets.all(3.0),
-          child: widget.button,
+        width: 100,
+        height: 100,
+        transformAlignment: Alignment.center,
+        transform: Matrix4.diagonal3Values(
+          _open ? 1.4 : 1,
+          _open ? 1.4 : 1,
+          1.0, //
         ),
-      ),
-    );
+        duration: const Duration(milliseconds: 250),
+        curve: const Interval(0.0, 0.5, curve: Curves.easeOut),
+        child: InkWell(
+          customBorder: const CircleBorder(),
+          child: widget.button,
+          onTap: _toggle,
+        )
+        // FloatingActionButton(
+        //   backgroundColor: widget.backgroundColor,
+        //   foregroundColor: widget.foregroundColor,
+        //   onPressed: _toggle,
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(3.0),
+        //     child: widget.button,
+        //   ),
+        // ),
+        );
   }
 }
 

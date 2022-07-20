@@ -2,7 +2,6 @@ import 'package:daemon_website/project_list.dart';
 import 'package:daemon_website/project_screen/chemtracker_screen.dart';
 import 'package:daemon_website/project_screen/itshere_screen.dart';
 import 'package:daemon_website/project_screen/patience_screen.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nil/nil.dart';
 import 'package:url_launcher/url_launcher.dart';

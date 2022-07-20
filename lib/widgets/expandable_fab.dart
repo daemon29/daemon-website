@@ -138,17 +138,7 @@ class _ExpandableFabState extends State<ExpandableFab>
           customBorder: const CircleBorder(),
           child: widget.button,
           onTap: _toggle,
-        )
-        // FloatingActionButton(
-        //   backgroundColor: widget.backgroundColor,
-        //   foregroundColor: widget.foregroundColor,
-        //   onPressed: _toggle,
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(3.0),
-        //     child: widget.button,
-        //   ),
-        // ),
-        );
+        ));
   }
 }
 

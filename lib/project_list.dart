@@ -1,5 +1,6 @@
 import 'package:daemon_website/models/polaroid_text.dart';
 import 'package:daemon_website/models/project_model_list.dart';
+import 'package:daemon_website/widgets/flip_card.dart';
 import 'package:daemon_website/widgets/polaroid_widget.dart';
 import 'package:daemon_website/widgets/project_tile.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,13 @@ class ProjectList extends StatelessWidget {
             ProjectTile(model: patienceModel),
             ProjectTile(model: itshereModel),
             ProjectTile(model: chemtrackerModel),
-            PolaroidWidget(
-              polaroidText: PolaroidText(
-                  text: "Love this project, with all of my heart!",
-                  fontFamily: 'Love'),
+            FlipCard(
+              front: PolaroidWidget(
+                polaroidText: PolaroidText(
+                    text: "Love this project, with all of my heart!",
+                    fontFamily: 'Love'),
+              ),
+              rear: const PolaroidBackWidget(),
             ),
             PolaroidWidget(
               image: "https://i.imgur.com/sIkuLqu.jpg",

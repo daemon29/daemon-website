@@ -59,6 +59,25 @@ class PolaroidWidget extends StatelessWidget {
   }
 }
 
+class PolaroidBackWidget extends StatelessWidget {
+  const PolaroidBackWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 5,
+      child: Container(
+        width: 336,
+        height: 403.2,
+        color: Colors.white,
+        padding: const EdgeInsets.all(10),
+        alignment: Alignment.topLeft,
+        child: const Text("Helllooooo"),
+      ),
+    );
+  }
+}
+
 class PolaroidStack extends StatelessWidget {
   final List<Widget> list;
   const PolaroidStack({Key? key, this.list = const []}) : super(key: key);

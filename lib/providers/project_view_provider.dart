@@ -11,9 +11,14 @@ class ProjectViewProvider extends ChangeNotifier {
   late List<Widget> pages;
   late PageController pageController;
   String? _currentRoute;
-  ProjectViewProvider() {
+  ProjectViewProvider(String? page) {
     pages = [const ProjectList(), nil];
-    pageController = PageController(initialPage: 0);
+    setRoute(page);
+    if (pages[1] == nil) {
+      pageController = PageController(initialPage: 0);
+    } else {
+      pageController = PageController(initialPage: 1);
+    }
   }
   void updateProjectViewPage(Widget newWidget) {
     pages[1] = newWidget;
@@ -21,6 +26,12 @@ class ProjectViewProvider extends ChangeNotifier {
   }
 
   void goForward(String route) {
+    setRoute(route);
+    pageController.animateToPage(1,
+        duration: const Duration(milliseconds: 600), curve: Curves.ease);
+  }
+
+  void setRoute(String? route) {
     if (route != _currentRoute) {
       switch (route) {
         case 'patience':
@@ -36,8 +47,6 @@ class ProjectViewProvider extends ChangeNotifier {
       }
     }
     notifyListeners();
-    pageController.animateToPage(1,
-        duration: const Duration(milliseconds: 600), curve: Curves.ease);
   }
 
   void goBack() {

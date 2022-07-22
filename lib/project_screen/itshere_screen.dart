@@ -1,9 +1,7 @@
 import 'package:daemon_website/constants.dart';
-import 'package:daemon_website/providers/project_view_provider.dart';
 import 'package:daemon_website/text_spans/itshere_text.dart';
 import 'package:daemon_website/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:span_builder/span_builder.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 

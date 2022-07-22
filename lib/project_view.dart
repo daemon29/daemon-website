@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProjectView extends StatelessWidget {
-  const ProjectView({Key? key}) : super(key: key);
+  final String? page;
+  const ProjectView({Key? key, this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => ProjectViewProvider(),
+      create: (context) => ProjectViewProvider(page),
       child: Consumer<ProjectViewProvider>(
         builder: (context, model, child) {
           return PageView(

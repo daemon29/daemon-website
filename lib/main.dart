@@ -4,18 +4,23 @@ import 'package:daemon_website/project_view.dart';
 import 'package:daemon_website/widgets/expandable_fab.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(const MyApp());
+  // GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      routeInformationProvider: router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
       title: 'Daemon Nguyen',
       scrollBehavior: const ConstantScrollBehavior(),
@@ -23,13 +28,41 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: blueColor)
             .copyWith(secondary: redColor),
       ),
-      home: const DaemonWebsite(),
     );
   }
+
+  final router = GoRouter(
+      redirect: (GoRouterState state) {
+        return null;
+      },
+      urlPathStrategy: UrlPathStrategy.path,
+      initialLocation: '/home',
+      routes: [
+        GoRoute(
+          name: 'home',
+          path: '/home',
+          pageBuilder: (context, state) {
+            final page = state.queryParams['id'];
+            return MaterialPage(
+                child: DaemonWebsite(
+              projectId: page,
+            ));
+          },
+        )
+      ],
+      errorPageBuilder: (context, state) {
+        return MaterialPage(
+            child: Scaffold(
+          body: Center(
+            child: Text(state.error.toString()),
+          ),
+        ));
+      });
 }
 
 class DaemonWebsite extends StatelessWidget {
-  const DaemonWebsite({Key? key}) : super(key: key);
+  final String? projectId;
+  const DaemonWebsite({Key? key, this.projectId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -92,8 +125,8 @@ class DaemonWebsite extends StatelessWidget {
           fit: BoxFit.cover,
         )),
         child: Row(
-          children: const [
-            Expanded(
+          children: [
+            const Expanded(
                 flex: 2,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
@@ -101,7 +134,9 @@ class DaemonWebsite extends StatelessWidget {
                 )),
             Expanded(
               flex: 5,
-              child: ProjectView(),
+              child: ProjectView(
+                page: projectId,
+              ),
             )
           ],
         ),

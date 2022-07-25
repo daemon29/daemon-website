@@ -92,6 +92,9 @@ flutter:
     - family: Winkle
       fonts:
         - asset: fonts/winkle.ttf
+    - family: Lovely
+      fonts:
+        - asset: fonts/lovely.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

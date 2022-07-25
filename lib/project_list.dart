@@ -22,11 +22,16 @@ class ProjectList extends StatelessWidget {
             ProjectTile(model: chemtrackerModel),
             FlipCard(
               front: PolaroidWidget(
+                height: 200,
                 polaroidText: PolaroidText(
                     text: "Love this project, with all of my heart!",
                     fontFamily: 'Love'),
               ),
-              rear: const PolaroidBackWidget(),
+              rear: const PolaroidBackWidget(
+                height: 200,
+                text: "Jeg har savnet det",
+                alignment: Alignment.bottomRight,
+              ),
             ),
             PolaroidWidget(
               image: "https://i.imgur.com/sIkuLqu.jpg",

@@ -27,9 +27,9 @@ class HeroDialogRoute<T> extends PageRoute<T> {
       Animation<double> secondaryAnimation, Widget child) {
     return FadeTransition(
       opacity: CurvedAnimation(curve: Curves.easeOut, parent: animation),
-      child: GestureDetector(
+      child: Align(
+        alignment: Alignment.center,
         child: child,
-        onTap: () => Navigator.pop(context),
       ),
     );
   }

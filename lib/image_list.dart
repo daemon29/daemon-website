@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:daemon_website/constants.dart';
-import 'package:daemon_website/widgets/image_hero.dart';
+import 'package:daemon_website/widgets/polaroid_widget.dart';
 import 'package:flutter/material.dart';
 
 class ImageList extends StatelessWidget {
@@ -9,10 +9,11 @@ class ImageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
-      itemCount: images.length,
+      itemCount: polaroidImages.length,
       options: CarouselOptions(
-        aspectRatio: 3,
-        viewportFraction: 0.4,
+        // view
+        aspectRatio: 1,
+        viewportFraction: 0.6,
         height: MediaQuery.of(context).size.height,
         autoPlayInterval: const Duration(seconds: 2),
         enlargeCenterPage: true,
@@ -20,13 +21,14 @@ class ImageList extends StatelessWidget {
         autoPlay: true,
       ),
       itemBuilder: (BuildContext context, int itemIndex, int pageIndex) {
-        return Container(
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: ImageHero(images[itemIndex]),
-        );
+        // return Container(
+        //   clipBehavior: Clip.hardEdge,
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(15),
+        //   ),
+        //   child: ImageHero(images[itemIndex]),
+        // );
+        return PolaroidCard(polaroidModel: polaroidImages[itemIndex]);
       },
     );
   }

@@ -1,16 +1,20 @@
+import 'package:daemon_website/models/polaroid_model.dart';
 import 'package:daemon_website/models/polaroid_text.dart';
+import 'package:daemon_website/widgets/flip_card.dart';
+import 'package:daemon_website/widgets/image_hero_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:nil/nil.dart';
 
 class PolaroidWidget extends StatelessWidget {
   final double height;
   final String image;
   final PolaroidText? polaroidText;
-  const PolaroidWidget(
-      {Key? key,
-      this.image = 'https://i.imgur.com/IYFh9ge.png',
-      this.polaroidText,
-      this.height = 403.2})
-      : super(key: key);
+  const PolaroidWidget({
+    Key? key,
+    required this.image,
+    this.polaroidText,
+    this.height = 403.2,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +53,10 @@ class PolaroidWidget extends StatelessWidget {
                     child: Text(
                       polaroidText!.text,
                       style: TextStyle(
-                        fontFamily: polaroidText!.fontFamily,
-                        fontSize: polaroidText!.fontSize * _scalling,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontFamily: polaroidText!.fontFamily,
+                          fontSize: polaroidText!.fontSize * _scalling,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                     ),
                   ),
                 )
@@ -63,17 +67,15 @@ class PolaroidWidget extends StatelessWidget {
 }
 
 class PolaroidBackWidget extends StatelessWidget {
-  final String text;
+  final PolaroidText? text;
   final Alignment alignment;
   final double height;
-  final double fontSize;
-  const PolaroidBackWidget(
-      {Key? key,
-      this.text = "",
-      this.alignment = Alignment.topLeft,
-      this.height = 403.2,
-      this.fontSize = 26})
-      : super(key: key);
+  const PolaroidBackWidget({
+    Key? key,
+    this.text,
+    this.alignment = Alignment.center,
+    this.height = 403.2,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,13 +89,15 @@ class PolaroidBackWidget extends StatelessWidget {
         color: Colors.white,
         padding: EdgeInsets.all(10 * _scalling),
         alignment: alignment,
-        child: Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'Lovely',
-            fontSize: fontSize * _scalling,
-          ),
-        ),
+        child: text != null
+            ? Text(
+                text!.text,
+                style: TextStyle(
+                    fontFamily: text!.fontFamily,
+                    fontSize: text!.fontSize * _scalling,
+                    color: Colors.black),
+              )
+            : nil,
       ),
     );
   }
@@ -106,5 +110,49 @@ class PolaroidStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container();
+  }
+}
+
+class PolaroidCard extends StatelessWidget {
+  final PolaroidModel polaroidModel;
+  const PolaroidCard({Key? key, required this.polaroidModel}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        child: Hero(
+          tag: polaroidModel.imageUrl,
+          child: PolaroidWidget(
+            image: polaroidModel.imageUrl,
+            polaroidText: polaroidModel.frontText,
+          ),
+        ),
+        onTap: () => Navigator.push(
+          context,
+          HeroDialogRoute(
+            builder: (BuildContext context) {
+              final height = MediaQuery.of(context).size.height;
+              return FlipCard(
+                front: Hero(
+                  tag: polaroidModel.imageUrl,
+                  child: PolaroidWidget(
+                    image: polaroidModel.imageUrl,
+                    polaroidText: polaroidModel.frontText,
+                    height: height * 0.8,
+                  ),
+                ),
+                rear: PolaroidBackWidget(
+                  text: polaroidModel.backText,
+                  height: height * 0.8,
+                  alignment: polaroidModel.backTextAlignment,
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      themeMode: ThemeMode.dark,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
@@ -25,39 +26,45 @@ class MyApp extends StatelessWidget {
       title: 'Daemon Nguyen',
       scrollBehavior: const ConstantScrollBehavior(),
       theme: ThemeData(
+        brightness: Brightness.light,
         colorScheme: ColorScheme.fromSwatch(primarySwatch: blueColor)
             .copyWith(secondary: redColor),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.dark(primary: blueColor, secondary: redColor),
+        brightness: Brightness.dark,
       ),
     );
   }
 
   final router = GoRouter(
-      redirect: (GoRouterState state) {
-        return null;
-      },
-      urlPathStrategy: UrlPathStrategy.path,
-      initialLocation: '/home',
-      routes: [
-        GoRoute(
-          name: 'home',
-          path: '/home',
-          pageBuilder: (context, state) {
-            final page = state.queryParams['id'];
-            return MaterialPage(
-                child: DaemonWebsite(
-              projectId: page,
-            ));
-          },
-        )
-      ],
-      errorPageBuilder: (context, state) {
-        return MaterialPage(
-            child: Scaffold(
-          body: Center(
-            child: Text(state.error.toString()),
-          ),
-        ));
-      });
+    redirect: (GoRouterState state) {
+      return null;
+    },
+    urlPathStrategy: UrlPathStrategy.path,
+    initialLocation: '/home',
+    routes: [
+      GoRoute(
+        name: 'home',
+        path: '/home',
+        pageBuilder: (context, state) {
+          final page = state.queryParams['id'];
+          return MaterialPage(
+              child: DaemonWebsite(
+            projectId: page,
+          ));
+        },
+      )
+    ],
+    errorPageBuilder: (context, state) {
+      return MaterialPage(
+          child: Scaffold(
+        body: Center(
+          child: Text(state.error.toString()),
+        ),
+      ));
+    },
+  );
 }
 
 class DaemonWebsite extends StatelessWidget {
@@ -90,6 +97,7 @@ class DaemonWebsite extends StatelessWidget {
             tooltip: 'Check out my awesome repos',
             icon: const FaIcon(
               FontAwesomeIcons.github,
+              color: Colors.black,
             ),
           ),
           ActionButton(

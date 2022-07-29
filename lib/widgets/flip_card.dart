@@ -22,29 +22,32 @@ class _FlipCardState extends State<FlipCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _displayFront = !_displayFront;
-        });
-      },
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 600),
-        child: _displayFront
-            ? SizedBox(
-                key: const ValueKey(true),
-                child: widget.front,
-              )
-            : SizedBox(
-                key: const ValueKey(false),
-                child: widget.rear,
-              ),
-        transitionBuilder: __transitionBuilder,
-        layoutBuilder: (widget, list) => Stack(
-          children: [widget ?? nil, ...list],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            _displayFront = !_displayFront;
+          });
+        },
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 600),
+          child: _displayFront
+              ? SizedBox(
+                  key: const ValueKey(true),
+                  child: widget.front,
+                )
+              : SizedBox(
+                  key: const ValueKey(false),
+                  child: widget.rear,
+                ),
+          transitionBuilder: __transitionBuilder,
+          layoutBuilder: (widget, list) => Stack(
+            children: [widget ?? nil, ...list],
+          ),
+          switchInCurve: Curves.easeInBack,
+          switchOutCurve: Curves.easeInBack.flipped,
         ),
-        switchInCurve: Curves.easeInBack,
-        switchOutCurve: Curves.easeInBack.flipped,
       ),
     );
   }

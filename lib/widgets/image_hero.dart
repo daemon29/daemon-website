@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 
 class ImageHero extends StatelessWidget {
   final String image;
-  final BoxFit? fit;
-  const ImageHero(this.image, {Key? key, this.fit}) : super(key: key);
+  // final BoxFit? fit;
+  const ImageHero(
+    this.image, {
+    Key? key,
+    // this.fit
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

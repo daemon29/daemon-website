@@ -4,8 +4,8 @@ import 'package:daemon_website/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:span_builder/span_builder.dart';
 
-class ChemTrackerScreen extends StatelessWidget {
-  const ChemTrackerScreen({Key? key}) : super(key: key);
+class DotoSaveScreen extends StatelessWidget {
+  const DotoSaveScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

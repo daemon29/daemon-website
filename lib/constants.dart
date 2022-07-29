@@ -1,3 +1,5 @@
+import 'package:daemon_website/models/polaroid_model.dart';
+import 'package:daemon_website/models/polaroid_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -85,4 +87,32 @@ List<String> images = const [
 List<String> unsortedImages = const [
   "https://i.imgur.com/yZl84gc.png", //chem 2
   "https://i.imgur.com/2xilfWe.png", //chem 3
+];
+List<PolaroidModel> polaroidImages = [
+  PolaroidModel(
+    imageUrl: images[0],
+    frontText: PolaroidText(
+        text: "Love this project, with all of my heart!", fontFamily: 'Love'),
+    backText: PolaroidText(
+        text: "Jeg har savnet det", fontFamily: 'Love', fontSize: 26),
+  ),
+  PolaroidModel(
+    imageUrl: images[4],
+    frontText:
+        PolaroidText(text: "The gang beated it, again!", fontFamily: 'Coffee'),
+    backText: PolaroidText(
+        text:
+            "1st time I led a team, to participate and win a hackathon. Proud of myself",
+        fontFamily: 'Coffee',
+        fontSize: 26),
+  ),
+  PolaroidModel(
+    imageUrl: images[17],
+    frontText: PolaroidText(
+        text: "Graduation day!", fontFamily: 'Coffee', fontSize: 20),
+    backText: PolaroidText(
+        text: "Time flies so fast. You have burnt bright!",
+        fontFamily: 'Coffee',
+        fontSize: 26),
+  ),
 ];
